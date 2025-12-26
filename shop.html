@@ -1,11 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>SHOPE PAGE</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DDW | Shop</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="navbar-container">
+        <a href="index.html" class="logo">DDW</a>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html" class="active">Shop</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-right">
+          <button id="themeToggle" class="btn-icon">
+            <span id="themeIcon"
+              ><img
+                src="https://img.icons8.com/ios-glyphs/30/ffffff/moon-symbol.png"
+                alt="Dark Mode"
+            /></span>
+          </button>
+          <button id="cartBtn" class="btn-icon">
+            <img
+              src="https://img.icons8.com/ios-glyphs/30/ffffff/shopping-cart.png"
+              alt="Cart"
+            />
+            <span id="cartCount" class="badge">0</span>
+          </button>
+          <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mobile-nav" id="mobileNav">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </header>
+
+    <div class="container">
+      <h1 class="page-title">Products</h1>
+
+      <div class="search-wrapper">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search products..."
+          class="search-input"
+        />
+      </div>
+
+      <div class="filter-controls">
+        <button class="primary-btn" onclick="filterProducts('all')">All</button>
+        <button class="filter-btn" onclick="filterProducts('wearable')">
+          Wearables
+        </button>
+        <button class="filter-btn" onclick="filterProducts('peripheral')">
+          Peripherals
+        </button>
+      </div>
+
+      <div class="products-grid" id="productsGrid">
+        <!-- JS injects here -->
+      </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar">
+      <div class="cart-header">
+        <h3>Your Cart</h3>
+        <button id="closeCart" class="btn-icon">✕</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-footer">
+        <span class="total">Total: <span id="cartTotal">$0.00</span></span>
+        <button class="primary-btn" style="width: 100%" onclick="checkout()">
+          Checkout
+        </button>
+        <button
+          style="
+            width: 100%;
+            margin-top: 10px;
+            background: none;
+            border: none;
+            text-decoration: underline;
+            cursor: pointer;
+            color: var(--text-color);
+          "
+          onclick="clearCart()"
+        >
+          Clear Cart
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>

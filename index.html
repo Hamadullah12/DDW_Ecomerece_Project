@@ -1,11 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DDW Home</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="navbar-container">
+        <a href="index.html" class="logo">DDW</a>
+
+        <!-- Desktop Nav -->
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-right">
+          <!-- Theme Toggle -->
+          <button id="themeToggle" class="btn-icon">
+            <span id="themeIcon"
+              ><img
+                src="https://img.icons8.com/ios-glyphs/30/ffffff/moon-symbol.png"
+                alt="Dark Mode"
+            /></span>
+          </button>
+
+          <!-- Cart Button -->
+          <button id="cartBtn" class="btn-icon">
+            <img
+              src="https://img.icons8.com/ios-glyphs/30/ffffff/shopping-cart.png"
+              alt="Cart"
+            />
+            <span id="cartCount" class="badge">0</span>
+          </button>
+
+          <!-- Mobile Hamburger -->
+          <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Nav Menu (Hidden by default) -->
+      <div class="mobile-nav" id="mobileNav">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>DDW Project Task</h1>
+        <p>
+          Welcome to Digital Dream Web. This platform focuses on delivering
+          high-quality digital solutions and innovative web experiences. We
+          transform complex ideas into accessible, user-friendly realities.
+        </p>
+        <a href="shop.html" class="primary-btn">Explore Products</a>
+      </div>
+    </section>
+
+    <!-- Project Info / Startup Explanation -->
+    <section class="project-info">
+      <div class="container">
+        <div class="info-box">
+          <span class="info-badge">About Startup</span>
+          <h2>Building the Digital Future</h2>
+          <p>
+            Digital Dream Web (DDW) is a forward-thinking startup initiative.
+            Our mission is to bridge the gap between cutting-edge technology and
+            everyday usability. Whether it's through responsive web design,
+            intuitive e-commerce platforms, or bespoke software solutions, we
+            aim to set a new standard for digital presence. This project serves
+            as a foundational prototype demonstrating our commitment to clean
+            code and responsive design.
+          </p>
+        </div>
+
+        <h2 style="text-align: center; margin-top: 50px">Meet The Mentors</h2>
+        <div class="mentors-grid">
+          <!-- Mentor 1 -->
+          <div class="mentor-card">
+            <img
+              src="images/shafqat.jpg"
+              alt="Shafqat Ullah Salih"
+              class="mentor-img"
+            />
+            <h3 class="mentor-name">Shafqat Ullah Salih</h3>
+            <div class="mentor-role">MERN Stack Developer</div>
+            <p class="mentor-bio">
+              Specializes in React, Next.js, and Firebase. With 2+ years of
+              experience, Shafqat crafts high-performance, secure, and scalable
+              web applications.
+            </p>
+          </div>
+
+          <!-- Mentor 2 -->
+          <div class="mentor-card">
+            <img src="images/saqib.jpg" alt="Saqib Khan" class="mentor-img" />
+            <h3 class="mentor-name">Saqib Khan</h3>
+            <div class="mentor-role">Creative Web Developer</div>
+            <p class="mentor-bio">
+              An expert in creative frontend development, focusing on stunning
+              UI designs and solving complex visual challenges.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar">
+      <div class="cart-header">
+        <h3>Your Cart</h3>
+        <button id="closeCart" class="btn-icon">✕</button>
+      </div>
+      <div id="cartItems" class="cart-items">
+        <!-- Items injected by JS -->
+      </div>
+      <div class="cart-footer">
+        <span class="total">Total: <span id="cartTotal">$0.00</span></span>
+        <button class="primary-btn" style="width: 100%" onclick="checkout()">
+          Checkout
+        </button>
+        <button
+          style="
+            width: 100%;
+            margin-top: 10px;
+            background: none;
+            border: none;
+            text-decoration: underline;
+            cursor: pointer;
+            color: var(--text-color);
+          "
+          onclick="clearCart()"
+        >
+          Clear Cart
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
