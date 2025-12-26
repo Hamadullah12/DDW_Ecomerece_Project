@@ -25,8 +25,8 @@ Technologies Used
 - JavaScript (Vanilla JS) – Interactivity, DOM manipulation, and cart logic
 
 No frameworks  
- No backend  
- No external libraries
+No backend  
+No external libraries
 
 ---
 
@@ -74,7 +74,7 @@ Cart Functionality
 
 Local Storage
 
-- Cart data is saved using `localStorage`
+- Cart data is saved using localStorage
 - Cart data is restored on page reload
 - Cart is not cleared when the page refreshes
 
